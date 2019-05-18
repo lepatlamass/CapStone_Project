@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "811422329553",
+    "firebase_url": "https://movieshowapp.firebaseio.com",
+    "project_id": "movieshowapp",
+    "storage_bucket": "movieshowapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811422329553:android:d2d80ef8c74bd56e",
+        "android_client_info": {
+          "package_name": "com.movieapp.konwo.movieap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811422329553-jaqp7dovg12vk35sk7vl72kmd4ocnh0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe72MK_tT7ilP_PJzKrZdRwA5BT369Gyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811422329553-jaqp7dovg12vk35sk7vl72kmd4ocnh0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
