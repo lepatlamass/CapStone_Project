@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="movie_detail_image_height">500dp</dimen>
+    <dimen name="card_margin_top_title">10dp</dimen>
+    <dimen name="card_cover_height">153dp</dimen>
+    <dimen name="movie_title_card">16sp</dimen>
+    <dimen name="movie_title_detail_size">20sp</dimen>
+    <dimen name="movie_secondary_title">16sp</dimen>
+    <dimen name="movie_simple_text">12sp</dimen>
+    <dimen name="movie_score_size">50sp</dimen>
+    <dimen name="movie_release_size">16sp</dimen>
+    <dimen name="movie_detail_space_between">20dp</dimen>
+    <dimen name="movie_detail_margin_left">10dp</dimen>
+    <item name="low_speed" type="dimen" format="float">120</item>
+    <item name="normal_speed" type="dimen" format="float">100</item>
+</resources>

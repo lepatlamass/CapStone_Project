@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Movie APP</string>
+    <string name="action_setting">Setting</string>
+    <string name="Movie_name">Movie Title</string>
+    <string name="movie_detail">Overview</string>
+    <string name="plot">Plot Synopsis</string>
+    <string name="rating">User Score</string>
+    <string name="release">Release Date</string>
+    <string name="sort_label">Sort Order</string>
+    <string name="order_key">sortOrder</string>
+    <string name="most_pop">Most Popular</string>
+    <string name="highest_rating">Highest Rated</string>
+    <string name="chose_sort_order">Choose an order to sort</string>
+    <string name="trailer">Trailer</string>
+    <string name="favorite">Favorite Movies</string>
+    <string name="review">Review</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
