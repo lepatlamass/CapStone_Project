@@ -357,12 +357,6 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                tv_showsDatabase.tvShowDAO().insert(tv_shows);
-            }
-        });
     }
 
     private void removeFavorite() {
@@ -373,13 +367,6 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-        //tv_shows
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                tv_showsDatabase.tvShowDAO().delete(tv_shows);
-            }
-        });
     }
 
 }

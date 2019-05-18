@@ -22,6 +22,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.movieapp.konwo.movieap.adapter.MoviesAdapter;
 import com.movieapp.konwo.movieap.adapter.Tv_showsAdapter;
 import com.movieapp.konwo.movieap.api.Client;
@@ -35,6 +41,7 @@ import com.movieapp.konwo.movieap.model.MoviesResponse;
 import com.movieapp.konwo.movieap.model.Tv_shows;
 import com.movieapp.konwo.movieap.model.Tv_showsResponses;
 
+import io.fabric.sdk.android.Fabric;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,10 +75,28 @@ public class MainActivity extends AppCompatActivity {
     private MovieViewModel viewModel;
     private Tv_showViewModel tv_showViewModel;
 
+    //firebase analytics
+    private FirebaseAnalytics mFirebaseAnalytics;
+
+    //analytics
+    private AdView mAdView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
+        FirebaseApp.initializeApp(this);
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        //add admobs to application
+        MobileAds.initialize(this, "ca-app-pub-8969054910088588~2014101977");
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         if (savedInstanceState != null) {
             moviesInstance = savedInstanceState.getParcelableArrayList(LIST_STATE);
@@ -113,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
     //show tvshow datas
     private void showDataTvShow() {
-        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view2);
 
         tv_showsAdapter = new Tv_showsAdapter(this, tvShowsInstance);
         if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
@@ -131,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
     //loading movies.
     public void loadMovies(final View v) {
         recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setVisibility(View.VISIBLE);
         findViewById(R.id.recycler_view2).setVisibility(View.GONE);
 
         movieList = new ArrayList<>();
@@ -163,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
     //loading tvshows.
     public void loadTvShows(final View v) {
         recyclerView = findViewById(R.id.recycler_view2);
+        recyclerView.setVisibility(View.VISIBLE);
         findViewById(R.id.recycler_view).setVisibility(View.GONE);
 
 
@@ -185,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 loadTvShows(v);
-                Toast.makeText(MainActivity.this, "Movies Refreshed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "TvShow Refreshed", Toast.LENGTH_SHORT).show();
             }
         });
 

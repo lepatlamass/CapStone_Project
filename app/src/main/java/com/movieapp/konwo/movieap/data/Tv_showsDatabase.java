@@ -11,6 +11,7 @@ import com.movieapp.konwo.movieap.model.Tv_shows;
 public abstract class Tv_showsDatabase extends RoomDatabase {
 
     public static volatile Tv_showsDatabase INSTANCE;
+
     public static Tv_showsDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (Tv_showsDatabase.class) {

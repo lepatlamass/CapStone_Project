@@ -210,42 +210,6 @@ public class DetailShowActivity extends AppCompatActivity {
         });
     }
 
-    /** private void Review(){
-        try {
-            if (BuildConfig.THE_MOVIE_DB_API_TOKEN.isEmpty()){
-                Toast.makeText(getApplicationContext(), "Please get your API Key", Toast.LENGTH_SHORT).show();
-                return;
-            } else {
-                Client client = new Client();
-                Service apiService = Client.getClient().create(Service.class);
-                Call<ReviewResponse> call = apiService.getReview(movie_id, BuildConfig.THE_MOVIE_DB_API_TOKEN);
-
-                call.enqueue(new Callback<ReviewResponse>() {
-                    @Override
-                    public void onResponse(Call<ReviewResponse> call, Response<ReviewResponse> response) {
-                        if (response.isSuccessful()){
-                            if (response.body() != null) {
-                                List<Review> reviewResults = response.body().getResults();
-                                MultiSnapRecyclerView recyclerView2 = findViewById(R.id.review_recycler);
-                                LinearLayoutManager firstManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-                                recyclerView2.setLayoutManager(firstManager);
-                                recyclerView2.setAdapter(new ReviewAdapter(getApplicationContext(), reviewResults));
-                                recyclerView2.smoothScrollToPosition(0);
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ReviewResponse> call, Throwable t) {
-
-                    }
-                });
-            }
-        } catch (Exception e) {
-            Log.d("Error", e.getMessage());
-            Toast.makeText(this, "unable to fetch data", Toast.LENGTH_SHORT).show();
-        }
-    } */
 
     public void saveFavorite () {
         // add a selected movie to favorite
