@@ -17,4 +17,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="movie_button">MOVIES</string>
+    <string name="tvshow">TV SHOW</string>
 </resources>
