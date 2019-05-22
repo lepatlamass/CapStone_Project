@@ -11,6 +11,7 @@
         android:id="@+id/card_view"
         android:layout_gravity="center"
         android:layout_margin="5dp"
+        card_view:cardBackgroundColor="@color/colorTetiary"
         android:elevation="3dp"
         card_view:cardCornerRadius="1dp">
         
@@ -30,13 +31,12 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/title"
                 android:layout_below="@+id/thumbnail"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
+                android:gravity="center"
                 android:paddingTop="@dimen/card_margin_top_title"
                 android:paddingBottom="10dp"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16sp"/>
+                android:textColor="@color/colorText"
+                android:textSize="12sp"/>
 
 
         </RelativeLayout>

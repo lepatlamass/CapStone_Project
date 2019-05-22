@@ -22,8 +22,8 @@ public interface Tv_showDAO {
     void insert(Tv_shows tv_shows);
 
     @Query("SELECT * FROM Tv_shows Where id = :id")
-    Tv_shows getMovieById(int id);
+    Tv_shows getTvShowById(int id);
 
     @Delete
-    void delete(Tv_shows movie);
+    void delete(Tv_shows tv_shows);
 }

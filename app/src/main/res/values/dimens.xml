@@ -14,4 +14,11 @@
     <dimen name="movie_detail_margin_left">10dp</dimen>
     <item name="low_speed" type="dimen" format="float">120</item>
     <item name="normal_speed" type="dimen" format="float">100</item>
+
+    <!--widget-->
+    <dimen name="widget_default_height">200dp</dimen>
+    <dimen name="widget_default_width">200dp</dimen>
+    <dimen name="widget_default_resize_width">180dp</dimen>
+    <dimen name="widget_default_resize_height">110dp</dimen>
+    <dimen name="widget_padding">4dp</dimen>
 </resources>

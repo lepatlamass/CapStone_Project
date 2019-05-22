@@ -100,7 +100,7 @@ public class DetailShowActivity extends AppCompatActivity {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                Tv_shows tv_shows1 = tv_showsDatabase.tvShowDAO().getMovieById(tv_shows.getId());
+                Tv_shows tv_shows1 = tv_showsDatabase.tvShowDAO().getTvShowById(tv_shows.getId());
                 // if movi1 is null, movie is'nt in favorite
                 if (tv_shows1 == null) {
                     // set the button state to false

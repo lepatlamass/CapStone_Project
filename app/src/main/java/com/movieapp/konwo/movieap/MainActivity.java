@@ -243,45 +243,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
     }
 
-    //loadfavorite movies
-    private void loadFavoritesMovies(){
-        recyclerView = findViewById(R.id.recycler_view);
 
-        movieList = new ArrayList<>();
-        adapter = new MoviesAdapter(this, movieList);
-
-        if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        } else {
-            recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
-        }
-
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-
-        getAllFavorite();
-    }
-
-    //loadfavorite tv shows
-    private void loadFavoritesTvShows(){
-        recyclerView = findViewById(R.id.recycler_view);
-
-        tvShows = new ArrayList<>();
-        tv_showsAdapter = new Tv_showsAdapter(this, tvShows);
-
-        if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        } else {
-            recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
-        }
-
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(tv_showsAdapter);
-        tv_showsAdapter.notifyDataSetChanged();
-
-        getAllFavoriteTvshows();
-    }
 
     //loading popular movies
     private void loadPopularMovies(){
@@ -466,10 +428,6 @@ public class MainActivity extends AppCompatActivity {
         if (sortOrder.equals(this.getString(R.string.most_pop))){
             Log.d(LOG_TAG,  "Sorting by most populsr");
             loadPopularMovies();
-        } else if
-                (sortOrder.equals(this.getString(R.string.favorite))){
-            Log.d(LOG_TAG, "Sorting by favorite");
-            loadFavoritesMovies();
         }
         else {
             Log.d(LOG_TAG, "Sorting by vote average");
@@ -487,10 +445,6 @@ public class MainActivity extends AppCompatActivity {
         if (sortOrder.equals(this.getString(R.string.most_pop))){
             Log.d(LOG_TAG,  "Sorting by most populsr");
             loadPopularTvShows();
-        } else if
-        (sortOrder.equals(this.getString(R.string.favorite))){
-            Log.d(LOG_TAG, "Sorting by favorite");
-            loadFavoritesTvShows();
         }
         else {
             Log.d(LOG_TAG, "Sorting by vote average");
@@ -503,18 +457,8 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    // load favorites by observing changes from the database
-    @SuppressLint("StaticFieldLeak")
-    private void getAllFavorite() {
-        viewModel.getAllMovies().observe(this, new Observer<List<Movie>>() {
-            @Override
-            public void onChanged(@Nullable List<Movie> movies) {
-                recyclerView.setAdapter(new MoviesAdapter(getApplicationContext(), movies));
-            }
-        });
-    }
 
-    // load favorites by observing changes from the database
+    /// load favorites by observing changes from the database
     @SuppressLint("StaticFieldLeak")
     private void getAllFavoriteTvshows() {
         tv_showViewModel.getAllTv_shows().observe(this, new Observer<List<Tv_shows>>() {
