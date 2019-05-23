@@ -8,7 +8,7 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_add_widget"
-        android:title="Add to widget"
+        android:title="@string/widegetname"
         app:showAsAction="always" />
 
 </menu>

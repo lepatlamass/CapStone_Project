@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity"
     android:background="@color/colorPrimary"
+    android:layoutDirection="rtl"
     android:fitsSystemWindows="true">
     
     <android.support.design.widget.AppBarLayout
@@ -32,6 +33,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/thumbnail_image_header"
                 android:scaleType="centerCrop"
+                android:contentDescription="null"
                 app:layout_collapseMode="parallax" />
 
 
@@ -81,7 +83,7 @@
                 app:mfb_color="@color/colorAccent"
                 app:mfb_type="star"
                 app:mfb_size="52"
-                android:layout_marginLeft="@dimen/movie_detail_margin_left"
+                android:layout_marginStart="@dimen/movie_detail_margin_left"
                 android:layout_marginTop="@dimen/card_margin_top_title"
                android:layout_below="@+id/title"/>
 
