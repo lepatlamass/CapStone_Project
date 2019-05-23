@@ -1,4 +1,4 @@
-# Popular Movie Stage 1
+# Popular Movie Stage 1 updated for Capstone project
 *This is part of the udacity nano degree project name Popular Movie stage one*
 # Softwore for the Installation
 - Android Studio 3.2
