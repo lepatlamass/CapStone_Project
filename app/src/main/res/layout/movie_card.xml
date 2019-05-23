@@ -25,7 +25,8 @@
                 android:layout_height="@dimen/card_cover_height"
                android:id="@+id/thumbnail"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:contentDescription="@null" />
 
             <TextView
                 android:layout_width="match_parent"
